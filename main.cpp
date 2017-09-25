@@ -16,8 +16,8 @@ int a,b,c;
         case '*': c=a * b;
                      cout<<(c); break;
 
-        case '/': c=a/b;
-                     cout<<(c);break;
+        case '/': 
+                     cout<<(double)a/b;break;
         case '%': c=a % b;
                         cout<<(c);break;
         case '&': c=a & b;
