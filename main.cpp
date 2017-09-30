@@ -1,42 +1,52 @@
-#include <iostream>
+#include "stdafx.h"
+#include "iostream"
+
+using namespace std;
 
 int main() {
 
- using namespace std;
-int a,b,c;
-     char f;
-    cin >>a>>f>>b;
+char f,op ;
+int a, b;
 
-    switch (f)
-    {
-        case '+': c=a+b;
-                    cout<<(c); break;
-        case '-': c=a-b;
-                     cout<<(c);break;
-        case '*': c=a * b;
-                     cout<<(c); break;
+cin >> a >> f;
 
-        case '/': 
-                     cout<<(double)a/b;break;
-        case '%': c=a % b;
-                        cout<<(c);break;
-        case '&': c=a & b;
-                    cout<<(c);  break;
+if (f == '<' || f == '>') {
+	cin >> op >> b;
+	if ( f == '<' && op == '<' ) {
+	 cout << (int)(a << b) << endl; 	
+	}
+	else if (f == '>' && op == '>') {
+		cout << (int)(a >> b) << endl;
+	}
+	         else cout << "ERROR";
 
-        case '|': c=a | b;
-                        cout<<(c);break;
-        case '^': c=a ^ b;
-                         cout<<(c); break;
-        case '<': c=a << b;
-                          cout<<(c); break;
-        case '>': c=a >> b;
-                           cout<<(c); break;
+}
+	else {
+		cin >> b;
+		
+		switch (f) {
+	case '+': cout << (int)(a + b) << endl; 
+     break;
+	case '-': cout << (int)(a - b) << endl;
+     break;
+	case '*': cout << (int)(a * b) << endl; 
+     break;
+	case '/': cout << (double)(a / b) << endl; 
+     break;
+	case '%': cout << (int)(a % b) << endl;
+     break;
+	case '&': cout << (int)(a % b) << endl; 
+     break;
+	case '|': cout << (int)(a | b) << endl; 
+     break;
+	case '^': cout << (int)(a ^ b) << endl; 
+        break;
+	           	default: cout << "ERROR";
+	}
+	}
 
-    }
+system("pause");
+cin.get();
 
-
-
-
-    return 0;
-
+return 0;
 }
